@@ -1,3 +1,5 @@
+console.log("SCRIPT LOAD OK");
+
 /* =========================
    TEAM FRONTIER MEMBER SYSTEM
    SCRIPT.JS
