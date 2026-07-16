@@ -435,3 +435,441 @@ state:"Locked"
 }
 
 ];
+
+/* =========================
+   MEMBER CARD
+========================= */
+
+function getStatusIcon(status){
+
+switch(status){
+
+case "ONLINE":
+return "🟢";
+
+case "RESTING":
+return "🟡";
+
+default:
+return "🔴";
+
+}
+
+}
+
+function createMemberCard(member){
+
+const card=document.createElement("div");
+
+card.className="memberCard";
+
+let badge="";
+
+if(member.generation==="staff"){
+
+badge='<div class="staffBadge">STAFF</div>';
+
+}
+
+card.innerHTML=`
+
+${badge}
+
+<div class="memberHeader">
+
+<img src="Frontier.png" alt="Frontier">
+
+<span>${getStatusIcon(member.status)} ${member.name}</span>
+
+</div>
+
+<div class="memberInfo">
+
+<p><strong>ID</strong> : ${member.id}</p>
+
+<p><strong>Role</strong> : ${member.role}</p>
+
+<p><strong>Join Date</strong> : ${member.joinDate}</p>
+
+<p><strong>Status</strong> : ${member.status}</p>
+
+<p><strong>Message</strong> : ${member.message}</p>
+
+</div>
+
+`;
+
+card.onclick=function(){
+
+card.classList.toggle("active");
+
+};
+
+return card;
+
+}
+
+/* =========================
+   MEMBER CREATE
+========================= */
+
+function createMembers(){
+
+staffContainer.innerHTML="";
+
+generation1.innerHTML="";
+
+generation2.innerHTML="";
+
+generation4.innerHTML="";
+
+generation5.innerHTML="";
+
+generation6.innerHTML="";
+
+members.forEach(function(member){
+
+const card=createMemberCard(member);
+
+switch(member.generation){
+
+case "staff":
+
+staffContainer.appendChild(card);
+
+break;
+
+case "1":
+
+generation1.appendChild(card);
+
+break;
+
+case "2":
+
+generation2.appendChild(card);
+
+break;
+
+case "4":
+
+generation4.appendChild(card);
+
+break;
+
+case "5":
+
+generation5.appendChild(card);
+
+break;
+
+case "6":
+
+generation6.appendChild(card);
+
+break;
+
+}
+
+});
+
+}
+
+/* =========================
+   MEMBER COUNT
+========================= */
+
+function updateCounter(){
+
+let online=0;
+
+let resting=0;
+
+let offline=0;
+
+members.forEach(function(member){
+
+switch(member.status){
+
+case "ONLINE":
+
+online++;
+
+break;
+
+case "RESTING":
+
+resting++;
+
+break;
+
+default:
+
+offline++;
+
+break;
+
+}
+
+});
+
+onlineCount.textContent=online;
+
+restingCount.textContent=resting;
+
+offlineCount.textContent=offline;
+
+}
+
+/* =========================
+   MEMBER INIT
+========================= */
+
+createMembers();
+
+updateCounter();
+
+/* =========================
+   SECTION
+========================= */
+
+const memberBtn=document.getElementById("memberBtn");
+
+const achievementBtn=document.getElementById("achievementBtn");
+
+const managementBtn=document.getElementById("managementBtn");
+
+const memberSection=document.getElementById("memberSection");
+
+const achievementSection=document.getElementById("achievementSection");
+
+/* =========================
+   ACHIEVEMENT CREATE
+========================= */
+
+function createAchievements(){
+
+achievementContainer.innerHTML="";
+
+achievements.forEach(function(item){
+
+const card=document.createElement("div");
+
+card.className="achievementCard";
+
+card.innerHTML=`
+
+<h3>${item.title}</h3>
+
+<p>${item.state}</p>
+
+`;
+
+achievementContainer.appendChild(card);
+
+});
+
+}
+
+/* =========================
+   PAGE CHANGE
+========================= */
+
+function showMembers(){
+
+memberSection.style.display="block";
+
+achievementSection.style.display="none";
+
+window.scrollTo({
+
+top:memberSection.offsetTop-30,
+
+behavior:"smooth"
+
+});
+
+}
+
+function showAchievements(){
+
+memberSection.style.display="none";
+
+achievementSection.style.display="block";
+
+window.scrollTo({
+
+top:achievementSection.offsetTop-30,
+
+behavior:"smooth"
+
+});
+
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+memberBtn.onclick=function(){
+
+showMembers();
+
+};
+
+achievementBtn.onclick=function(){
+
+showAchievements();
+
+};
+
+/* =========================
+   ACHIEVEMENT INIT
+========================= */
+
+createAchievements();
+
+showMembers();
+
+/* =========================
+   MANAGEMENT
+========================= */
+
+const managementPopup =
+document.getElementById("managementPopup");
+
+const adminPassword =
+document.getElementById("adminPassword");
+
+const adminBtn =
+document.getElementById("adminBtn");
+
+const adminMessage =
+document.getElementById("adminMessage");
+
+/* =========================
+   OPEN
+========================= */
+
+managementBtn.onclick=function(){
+
+managementPopup.style.display="flex";
+
+adminPassword.value="";
+
+adminMessage.textContent="";
+
+adminPassword.focus();
+
+};
+
+/* =========================
+   CLOSE
+========================= */
+
+function closeManagement(){
+
+managementPopup.style.display="none";
+
+adminPassword.value="";
+
+adminMessage.textContent="";
+
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+function adminLogin(){
+
+const value=adminPassword.value.trim();
+
+if(value===ADMIN_PASSWORD){
+
+adminMessage.textContent="ACCESS GRANTED";
+
+setTimeout(function(){
+
+window.location.href=
+"https://ria0013.github.io/TeamFrontier/";
+
+},400);
+
+}
+
+else{
+
+adminMessage.textContent="ACCESS DENIED";
+
+adminPassword.value="";
+
+adminPassword.focus();
+
+}
+
+}
+
+adminBtn.onclick=adminLogin;
+
+/* =========================
+   ENTER
+========================= */
+
+adminPassword.addEventListener("keydown",function(event){
+
+if(event.key==="Enter"){
+
+adminLogin();
+
+}
+
+});
+
+/* =========================
+   OUTSIDE CLICK
+========================= */
+
+managementPopup.addEventListener("click",function(event){
+
+if(event.target===managementPopup){
+
+closeManagement();
+
+}
+
+});
+
+/* =========================
+   ESC
+========================= */
+
+document.addEventListener("keydown",function(event){
+
+if(event.key==="Escape"){
+
+closeManagement();
+
+}
+
+});
+
+/* =========================
+   SYSTEM START
+========================= */
+
+function initializeSystem(){
+
+createMembers();
+
+updateCounter();
+
+createAchievements();
+
+showMembers();
+
+updateClock();
+
+}
+
+window.addEventListener("load",initializeSystem);
