@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ADMIN CONTROL</title>
+
+<style>
+
+body{
+
+    background:#111;
+    color:white;
+    font-family:sans-serif;
+    padding:30px;
+
+}
+
+
+h1{
+
+    color:#ffd400;
+
+}
+
+
+.box{
+
+    border:1px solid #444;
+    padding:20px;
+    margin-top:20px;
+    max-width:500px;
+
+}
+
+
+input{
+
+    width:80%;
+    padding:10px;
+    background:#222;
+    color:white;
+    border:1px solid #555;
+
+}
+
+
+button{
+
+    padding:10px 15px;
+    background:#ffd400;
+    border:none;
+    cursor:pointer;
+
+}
+
+
+.comment{
+
+    background:#222;
+    padding:10px;
+    margin-top:10px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+ADMIN CONTROL<br>
+관리진 페이지
+</h1>
+
+
+<div class="box">
+
+
+<h2>
+특이사항 테스트
+</h2>
+
+
+<input 
+id="noteInput"
+placeholder="내용 입력">
+
+
+<button onclick="addNote()">
+추가
+</button>
+
+
+<div id="noteList">
+
+</div>
+
+
+</div>
+
+
+
+<script type="module">
+
+
+import { initializeApp } 
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+
+import { 
+getFirestore,
+collection,
+addDoc,
+getDocs
+}
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+
+// Firebase 설정
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyCwxwFTyF-qam5EP-7FKXdWri4kanKZlyI",
+
+authDomain: "teamfrontier-34b24.firebaseapp.com",
+
+projectId: "teamfrontier-34b24",
+
+storageBucket: "teamfrontier-34b24.firebasestorage.app",
+
+messagingSenderId: "1053293310511",
+
+appId: "1:1053293310511:web:001f2684244ff9ebb40cda"
+
+};
+
+
+
+// Firebase 시작
+
+const app = initializeApp(firebaseConfig);
+
+
+// Firestore 연결
+
+const db = getFirestore(app);
+
+
+
+// 코멘 추가
+
+window.addNote = async function(){
+
+
+const text = document.getElementById("noteInput").value;
+
+
+if(!text) return;
+
+
+await addDoc(
+collection(db,"testNotes"),
+{
+
+content:text
+
+}
+
+);
+
+
+document.getElementById("noteInput").value="";
+
+
+loadNotes();
+
+
+};
+
+
+
+// 코멘 불러오기
+
+async function loadNotes(){
+
+
+const snapshot = await getDocs(
+collection(db,"testNotes")
+);
+
+
+const list =
+document.getElementById("noteList");
+
+
+list.innerHTML="";
+
+
+snapshot.forEach((doc)=>{
+
+
+const div=document.createElement("div");
+
+
+div.className="comment";
+
+
+div.textContent=
+doc.data().content;
+
+
+list.appendChild(div);
+
+
+});
+
+
+}
+
+
+
+loadNotes();
+
+
+</script>
+
+
+</body>
+
+</html>
