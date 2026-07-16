@@ -521,15 +521,15 @@ db,
 
 "adminRecords",
 
-"notes"
-
 ),
 
 {
 
 date:getDate(),
 
-text:text
+text:text,
+
+type:"note"
 
 }
 
@@ -591,7 +591,9 @@ db,
 
 date:getDate(),
 
-text:text
+text:text,
+
+type:"warning"
 
 }
 
@@ -643,7 +645,9 @@ db,
 
 date:getDate(),
 
-text:text
+text:text,
+
+type:"history"
 
 }
 
@@ -767,7 +771,6 @@ LOAD
 async function loadRecords(){
 
 
-
 noteList.innerHTML="";
 
 warningList.innerHTML="";
@@ -776,16 +779,13 @@ historyList.innerHTML="";
 
 
 
-
-const notes = await getDocs(
+const records = await getDocs(
 
 collection(
 
 db,
 
-"adminRecords",
-
-"notes"
+"adminRecords"
 
 )
 
@@ -793,7 +793,14 @@ db,
 
 
 
-notes.forEach(function(item){
+records.forEach(function(item){
+
+
+const data = item.data();
+
+
+
+if(data.type==="note"){
 
 
 createRecord(
@@ -805,29 +812,11 @@ item
 );
 
 
-});
+}
 
 
 
-
-
-const warnings = await getDocs(
-
-collection(
-
-db,
-
-"adminRecords",
-
-"warnings"
-
-)
-
-);
-
-
-
-warnings.forEach(function(item){
+if(data.type==="warning"){
 
 
 createRecord(
@@ -839,29 +828,11 @@ item
 );
 
 
-});
+}
 
 
 
-
-
-const history = await getDocs(
-
-collection(
-
-db,
-
-"adminRecords",
-
-"history"
-
-)
-
-);
-
-
-
-history.forEach(function(item){
+if(data.type==="history"){
 
 
 createRecord(
@@ -873,8 +844,11 @@ item
 );
 
 
-});
+}
 
+
+
+});
 
 
 }
