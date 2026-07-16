@@ -7,17 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-Team Frontier Admin
+TEAM FRONTIER ADMIN
 </title>
 
 
 <style>
 
-
 /* =========================
 RESET
 ========================= */
-
 
 *{
 
@@ -36,10 +34,9 @@ background:#212121;
 
 color:white;
 
-font-family:"Arial", sans-serif;
+font-family:Arial, sans-serif;
 
 }
-
 
 
 /* =========================
@@ -51,8 +48,6 @@ h1{
 
 color:#f7d18c;
 
-font-size:28px;
-
 letter-spacing:2px;
 
 }
@@ -60,14 +55,11 @@ letter-spacing:2px;
 
 .subTitle{
 
-color:#ffffff;
-
-font-size:14px;
-
 margin-bottom:40px;
 
-}
+color:white;
 
+}
 
 
 /* =========================
@@ -75,77 +67,33 @@ BOX
 ========================= */
 
 
-.adminBox{
+.box{
 
-border:1px solid #ffffff;
-
-background:#212121;
+border:1px solid white;
 
 padding:20px;
 
 margin-bottom:25px;
 
+background:#212121;
+
 }
 
 
 
-/* =========================
-SECTION TITLE
-========================= */
-
-
-.sectionTitle{
+.title{
 
 color:#f7d18c;
 
-border-bottom:1px solid #ffffff;
+font-size:22px;
+
+border-bottom:1px solid white;
 
 padding-bottom:10px;
 
 margin-bottom:20px;
 
 }
-
-
-
-/* =========================
-MEMBER LIST
-========================= */
-
-
-.memberList{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:10px;
-
-}
-
-
-
-.memberButton{
-
-border:1px solid #ffffff;
-
-background:#212121;
-
-color:white;
-
-padding:12px 20px;
-
-cursor:pointer;
-
-}
-
-
-.memberButton:hover{
-
-color:#f7d18c;
-
-}
-
 
 
 /* =========================
@@ -159,15 +107,15 @@ width:100%;
 
 height:120px;
 
-resize:vertical;
-
 background:#212121;
 
 color:white;
 
-border:1px solid #ffffff;
+border:1px solid white;
 
 padding:12px;
+
+resize:vertical;
 
 font-size:14px;
 
@@ -177,19 +125,20 @@ font-size:14px;
 
 button{
 
+margin-top:10px;
+
+padding:10px 20px;
+
 background:#212121;
 
 color:#f7d18c;
 
-border:1px solid #ffffff;
-
-padding:10px 20px;
-
-margin-top:10px;
+border:1px solid white;
 
 cursor:pointer;
 
 }
+
 
 
 button:hover{
@@ -201,7 +150,6 @@ color:#212121;
 }
 
 
-
 /* =========================
 RECORD
 ========================= */
@@ -209,16 +157,16 @@ RECORD
 
 .record{
 
-border:1px solid #ffffff;
+border:1px solid white;
 
 padding:15px;
 
-margin-top:10px;
+margin-top:15px;
 
 }
 
 
-.recordDate{
+.date{
 
 color:#f7d18c;
 
@@ -227,60 +175,46 @@ font-size:13px;
 }
 
 
-.recordText{
+.text{
 
-margin-top:8px;
+margin-top:10px;
 
 white-space:pre-line;
 
 }
 
 
-/* =========================
-DELETE BUTTON
-========================= */
 
-
-.deleteBtn{
-
-border:1px solid #ffffff;
-
-color:#f7d18c;
-
-background:#212121;
+.delete{
 
 margin-top:15px;
 
-padding:8px 15px;
-
 }
-
-
-.deleteBtn:hover{
-
-background:#f7d18c;
-
-color:#212121;
-
-}
-
 
 
 /* =========================
-STATUS
+MOBILE
 ========================= */
 
 
-#selectedMember{
+@media(max-width:768px){
 
-color:#f7d18c;
 
-font-size:20px;
+body{
 
-margin-bottom:20px;
+padding:20px;
 
 }
 
+
+h1{
+
+font-size:24px;
+
+}
+
+
+}
 
 
 </style>
@@ -291,7 +225,6 @@ margin-bottom:20px;
 
 
 <body>
-
 
 
 <h1>
@@ -311,89 +244,9 @@ AUTHORIZED PERSONNEL ONLY
 
 <br>
 
-관리진 전용 시스템
+관리진 전용 기록 시스템
 
 </p>
-
-
-
-
-<!-- =========================
-MEMBER MANAGEMENT
-========================= -->
-
-
-<div class="adminBox">
-
-
-<h2 class="sectionTitle">
-
-MEMBER MANAGEMENT
-
-</h2>
-
-
-<div class="memberList">
-
-
-<button class="memberButton">
-
-눈꽃
-
-</button>
-
-
-<button class="memberButton">
-
-후유
-
-</button>
-
-
-<button class="memberButton">
-
-오애
-
-</button>
-
-
-<button class="memberButton">
-
-슈팝
-
-</button>
-
-
-<button class="memberButton">
-
-금꽃
-
-</button>
-
-
-<button class="memberButton">
-
-셰인
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div id="selectedMember">
-
-멤버를 선택해주세요
-
-</div>
-
-
 
 
 
@@ -402,23 +255,24 @@ NOTE
 ========================= -->
 
 
-<div class="adminBox">
+<div class="box">
 
 
-<h2 class="sectionTitle">
+<div class="title">
 
 📌 특이사항
 
-</h2>
+</div>
 
 
 <textarea id="noteInput"
-placeholder="특이사항 기록 입력">
+
+placeholder="특이사항을 입력하세요">
 
 </textarea>
 
 
-<button>
+<button id="noteAdd">
 
 추가
 
@@ -435,29 +289,29 @@ placeholder="특이사항 기록 입력">
 
 
 
-
 <!-- =========================
 WARNING
 ========================= -->
 
 
-<div class="adminBox">
+<div class="box">
 
 
-<h2 class="sectionTitle">
+<div class="title">
 
 ⚠ 경고 기록
 
-</h2>
+</div>
 
 
 <textarea id="warningInput"
-placeholder="경고 기록 입력">
+
+placeholder="경고 기록을 입력하세요">
 
 </textarea>
 
 
-<button>
+<button id="warningAdd">
 
 추가
 
@@ -474,29 +328,29 @@ placeholder="경고 기록 입력">
 
 
 
-
 <!-- =========================
 HISTORY
 ========================= -->
 
 
-<div class="adminBox">
+<div class="box">
 
 
-<h2 class="sectionTitle">
+<div class="title">
 
 🎉 TEAM FRONTIER HISTORY
 
-</h2>
+</div>
 
 
 <textarea id="historyInput"
-placeholder="Team Frontier 기록 입력">
+
+placeholder="기념일 / 주요 기록 입력">
 
 </textarea>
 
 
-<button>
+<button id="historyAdd">
 
 추가
 
@@ -509,7 +363,6 @@ placeholder="Team Frontier 기록 입력">
 
 
 </div>
-
 
 <script type="module">
 
@@ -530,17 +383,12 @@ getFirestore,
 
 collection,
 
-addDoc,
-
-getDocs,
-
-deleteDoc,
-
-doc
+addDoc
 
 }
 
 from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
 
 
 
@@ -559,7 +407,6 @@ messagingSenderId: "1053293310511",
 
 appId: "1:1053293310511:web:001f2684244ff9ebb40cda"
 
-
 };
 
 
@@ -568,55 +415,6 @@ const app = initializeApp(firebaseConfig);
 
 
 const db = getFirestore(app);
-
-
-
-
-/* =========================
-CURRENT MEMBER
-========================= */
-
-
-let currentMember = "";
-
-
-
-
-const selectedMember =
-document.getElementById("selectedMember");
-
-
-
-
-/* =========================
-MEMBER SELECT
-========================= */
-
-
-const memberButtons =
-document.querySelectorAll(".memberButton");
-
-
-
-memberButtons.forEach(function(button){
-
-
-button.onclick=function(){
-
-
-currentMember = button.textContent.trim();
-
-
-selectedMember.textContent =
-
-"선택된 멤버 : " + currentMember;
-
-
-
-};
-
-
-});
 
 
 
@@ -651,7 +449,7 @@ day:"2-digit"
 
 
 /* =========================
-NOTE SAVE
+INPUT
 ========================= */
 
 
@@ -659,30 +457,48 @@ const noteInput =
 document.getElementById("noteInput");
 
 
-
-const noteButton =
-noteInput.nextElementSibling;
-
+const warningInput =
+document.getElementById("warningInput");
 
 
-noteButton.onclick = async function(){
-
-
-
-if(currentMember===""){
-
-
-alert("멤버를 선택해주세요.");
-
-return;
-
-
-}
+const historyInput =
+document.getElementById("historyInput");
 
 
 
-if(noteInput.value.trim()==="") return;
 
+/* =========================
+BUTTON
+========================= */
+
+
+const noteAdd =
+document.getElementById("noteAdd");
+
+
+const warningAdd =
+document.getElementById("warningAdd");
+
+
+const historyAdd =
+document.getElementById("historyAdd");
+
+
+
+
+
+/* =========================
+SAVE NOTE
+========================= */
+
+
+noteAdd.onclick = async function(){
+
+
+const text = noteInput.value.trim();
+
+
+if(text==="") return;
 
 
 
@@ -692,9 +508,7 @@ collection(
 
 db,
 
-"members",
-
-currentMember,
+"adminRecords",
 
 "notes"
 
@@ -702,21 +516,17 @@ currentMember,
 
 {
 
-
 date:getDate(),
 
-text:noteInput.value.trim()
-
+text:text
 
 }
-
 
 );
 
 
 
 noteInput.value="";
-
 
 
 alert("특이사항 저장 완료");
@@ -730,34 +540,17 @@ alert("특이사항 저장 완료");
 
 
 /* =========================
-WARNING SAVE
+SAVE WARNING
 ========================= */
 
 
-const warningInput =
-document.getElementById("warningInput");
-
-const warningButton =
-warningInput.nextElementSibling;
+warningAdd.onclick = async function(){
 
 
-warningButton.onclick = async function(){
+const text = warningInput.value.trim();
 
 
-if(currentMember===""){
-
-
-alert("멤버를 선택해주세요.");
-
-return;
-
-
-}
-
-
-
-if(warningInput.value.trim()==="") return;
-
+if(text==="") return;
 
 
 
@@ -767,9 +560,7 @@ collection(
 
 db,
 
-"members",
-
-currentMember,
+"adminRecords",
 
 "warnings"
 
@@ -779,7 +570,7 @@ currentMember,
 
 date:getDate(),
 
-text:warningInput.value.trim()
+text:text
 
 }
 
@@ -799,25 +590,19 @@ alert("경고 기록 저장 완료");
 
 
 
+
 /* =========================
-HISTORY SAVE
+SAVE HISTORY
 ========================= */
 
 
-const historyInput =
-document.getElementById("historyInput");
+historyAdd.onclick = async function(){
 
 
-
-const historyButton =
-historyInput.nextElementSibling;
+const text = historyInput.value.trim();
 
 
-
-historyButton.onclick = async function(){
-
-
-if(historyInput.value.trim()==="") return;
+if(text==="") return;
 
 
 
@@ -827,6 +612,8 @@ collection(
 
 db,
 
+"adminRecords",
+
 "history"
 
 ),
@@ -835,7 +622,7 @@ db,
 
 date:getDate(),
 
-text:historyInput.value.trim()
+text:text
 
 }
 
@@ -846,15 +633,37 @@ text:historyInput.value.trim()
 historyInput.value="";
 
 
-alert("기록장 저장 완료");
+alert("기록 저장 완료");
 
 
 };
 
 
+
+</script>
+
+<script type="module">
+
+
 /* =========================
-FIRESTORE LOAD
+LOAD DELETE FUNCTIONS
 ========================= */
+
+
+import {
+
+getDocs,
+
+collection,
+
+deleteDoc
+
+}
+
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+
 
 
 const noteList =
@@ -873,20 +682,96 @@ document.getElementById("historyList");
 
 
 /* =========================
-LOAD MEMBER RECORD
+CREATE RECORD
 ========================= */
 
 
-async function loadMemberRecords(){
+function createRecord(list, item){
 
 
-if(currentMember==="") return;
+const data = item.data();
+
+
+const box = document.createElement("div");
+
+
+box.className="record";
+
+
+box.innerHTML = `
+
+<div class="date">
+
+${data.date}
+
+</div>
+
+
+<div class="text">
+
+${data.text}
+
+</div>
+
+
+<button class="delete">
+
+삭제
+
+</button>
+
+`;
+
+
+
+box.querySelector(".delete").onclick = async function(){
+
+
+const result = confirm(
+
+"정말 삭제하시겠습니까?"
+
+);
+
+
+
+if(!result) return;
+
+
+
+await deleteDoc(item.ref);
+
+
+box.remove();
+
+
+};
+
+
+
+list.appendChild(box);
+
+
+}
+
+
+
+
+
+/* =========================
+LOAD
+========================= */
+
+
+async function loadRecords(){
 
 
 
 noteList.innerHTML="";
 
 warningList.innerHTML="";
+
+historyList.innerHTML="";
 
 
 
@@ -897,9 +782,7 @@ collection(
 
 db,
 
-"members",
-
-currentMember,
+"adminRecords",
 
 "notes"
 
@@ -916,14 +799,13 @@ createRecord(
 
 noteList,
 
-item,
-
-"note"
+item
 
 );
 
 
 });
+
 
 
 
@@ -934,9 +816,7 @@ collection(
 
 db,
 
-"members",
-
-currentMember,
+"adminRecords",
 
 "warnings"
 
@@ -953,9 +833,7 @@ createRecord(
 
 warningList,
 
-item,
-
-"warning"
+item
 
 );
 
@@ -963,21 +841,6 @@ item,
 });
 
 
-}
-
-
-
-
-
-/* =========================
-LOAD HISTORY
-========================= */
-
-
-async function loadHistory(){
-
-
-historyList.innerHTML="";
 
 
 
@@ -986,6 +849,8 @@ const history = await getDocs(
 collection(
 
 db,
+
+"adminRecords",
 
 "history"
 
@@ -1002,9 +867,7 @@ createRecord(
 
 historyList,
 
-item,
-
-"history"
+item
 
 );
 
@@ -1012,90 +875,6 @@ item,
 });
 
 
-}
-
-
-
-
-
-
-/* =========================
-CREATE RECORD
-========================= */
-
-
-function createRecord(list,item,type){
-
-
-const data=item.data();
-
-
-
-const box=document.createElement("div");
-
-
-box.className="record";
-
-
-
-box.innerHTML=`
-
-<div class="recordDate">
-
-${data.date}
-
-</div>
-
-
-<div class="recordText">
-
-${data.text}
-
-</div>
-
-
-<button class="deleteBtn">
-
-삭제
-
-</button>
-
-`;
-
-
-
-
-box.querySelector(".deleteBtn").onclick=
-
-async function(){
-
-
-const check =
-confirm("정말 삭제하시겠습니까?");
-
-
-if(!check) return;
-
-
-
-await deleteDoc(
-
-item.ref
-
-);
-
-
-
-box.remove();
-
-
-};
-
-
-
-
-list.appendChild(box);
-
 
 }
 
@@ -1103,51 +882,13 @@ list.appendChild(box);
 
 
 
-/* =========================
-MEMBER CLICK UPDATE
-========================= */
+loadRecords();
 
-
-memberButtons.forEach(function(button){
-
-
-button.addEventListener(
-
-"click",
-
-function(){
-
-
-setTimeout(function(){
-
-
-loadMemberRecords();
-
-
-},100);
-
-
-
-}
-
-);
-
-
-});
-
-
-
-
-
-/* =========================
-START
-========================= */
-
-
-loadHistory();
 
 
 </script>
+
+
 
 </body>
 
