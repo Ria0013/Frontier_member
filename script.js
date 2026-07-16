@@ -676,6 +676,8 @@ return card;
 
 function createMembers(){
 
+console.log(members);
+
 staffContainer.innerHTML="";
 
 generation1.innerHTML="";
