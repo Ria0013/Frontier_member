@@ -478,6 +478,34 @@ achievement:[
 
 ]
 
+},
+
+{
+
+name:"느엥",
+
+id:"-",
+
+role:"Member",
+
+generation:"2",
+
+joinDate:"0716",
+
+status:"ONLINE",
+
+message:"",
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
+
 }
 
 ];
