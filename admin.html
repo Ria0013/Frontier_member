@@ -14,6 +14,31 @@ TEAM FRONTIER ADMIN
 <style>
 
 /* =========================
+TOP MENU
+========================= */
+
+
+.topMenu{
+
+display:flex;
+
+gap:10px;
+
+margin-bottom:30px;
+
+flex-wrap:wrap;
+
+}
+
+
+.topMenu button{
+
+margin-top:0;
+
+}
+
+
+/* =========================
 RESET
 ========================= */
 
@@ -249,13 +274,34 @@ AUTHORIZED PERSONNEL ONLY
 </p>
 
 
+<!-- =========================
+MENU
+========================= -->
+
+<div class="topMenu">
+
+<button onclick="moveSection('noteBox')">
+📌 특이사항
+</button>
+
+<button onclick="moveSection('warningBox')">
+⚠ 경고 기록
+</button>
+
+<button onclick="moveSection('historyBox')">
+🎉 기록장
+</button>
+
+</div>
+
+
 
 <!-- =========================
 NOTE
 ========================= -->
 
 
-<div class="box">
+<div class="box" id="noteBox">
 
 
 <div class="title">
@@ -294,7 +340,7 @@ WARNING
 ========================= -->
 
 
-<div class="box">
+<div class="box" id="warningBox">
 
 
 <div class="title">
@@ -333,8 +379,7 @@ HISTORY
 ========================= -->
 
 
-<div class="box">
-
+<div class="box" id="historyBox">
 
 <div class="title">
 
@@ -863,6 +908,29 @@ item
 
 
 loadRecords();
+
+
+/* =========================
+MOVE SECTION
+========================= */
+
+
+window.moveSection=function(id){
+
+const target =
+document.getElementById(id);
+
+
+target.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+
+};
 
 
 
