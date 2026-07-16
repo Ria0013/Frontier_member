@@ -617,7 +617,7 @@ padding-top .25s ease;
 
 .memberCard.active .memberInfo{
 
-max-height:300px;
+max-height:1000px;
 
 opacity:1;
 
@@ -636,6 +636,18 @@ margin-bottom:14px;
 line-height:1.8;
 
 word-break:break-word;
+
+}
+
+.memberAchievement{
+
+font-size:8px;
+
+line-height:1.8;
+
+margin-top:10px;
+
+opacity:0.8;
 
 }
 
