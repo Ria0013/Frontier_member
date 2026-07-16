@@ -212,7 +212,7 @@ joinDate:"0709",
 
 status:"ONLINE",
 
-message:"Team Frontier Leader"
+message:"Team Frontier Leader",
 
 achievement:[
 
@@ -240,7 +240,7 @@ joinDate:"0709",
 
 status:"ONLINE",
 
-message:"Together We Move Forward."
+message:"Together We Move Forward.",
 
 achievement:[
 
@@ -268,7 +268,7 @@ joinDate:"0709",
 
 status:"OFFLINE",
 
-message:"Management Support."
+message:"Management Support.",
 
 achievement:[
 
@@ -296,7 +296,7 @@ joinDate:"0711",
 
 status:"ONLINE",
 
-message:""
+message:"",
 
 achievement:[
 
@@ -326,7 +326,7 @@ joinDate:"0711",
 
 status:"ONLINE",
 
-message:""
+message:"",
 
 achievement:[
 
@@ -354,7 +354,7 @@ joinDate:"0711",
 
 status:"ONLINE",
 
-message:""
+message:"",
 
 achievement:[
 
@@ -382,7 +382,7 @@ joinDate:"0711",
 
 status:"ONLINE",
 
-message:""
+message:"",
 
 achievement:[
 
@@ -410,7 +410,7 @@ joinDate:"-",
 
 status:"ONLINE",
 
-message:""
+message:"",
 
 achievement:[
 
@@ -438,7 +438,7 @@ joinDate:"-",
 
 status:"ONLINE",
 
-message:""
+message:"",
 
 achievement:[
 
@@ -466,7 +466,7 @@ joinDate:"-",
 
 status:"ONLINE",
 
-message:""
+message:"",
 
 achievement:[
 
