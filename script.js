@@ -646,11 +646,9 @@ generation1.innerHTML="";
 
 generation2.innerHTML="";
 
+generation3.innerHTML="";
+
 generation4.innerHTML="";
-
-generation5.innerHTML="";
-
-generation6.innerHTML="";
 
 members.forEach(function(member){
 
@@ -676,21 +674,15 @@ generation2.appendChild(card);
 
 break;
 
+case "3":
+
+generation3.appendChild(card);
+
+break;
+
 case "4":
 
 generation4.appendChild(card);
-
-break;
-
-case "5":
-
-generation5.appendChild(card);
-
-break;
-
-case "6":
-
-generation6.appendChild(card);
 
 break;
 
