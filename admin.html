@@ -497,6 +497,7 @@ SAVE NOTE
 
 
 noteAdd.onclick = async function(){
+noteAdd.onclick = async function(){
 
 alert("버튼 눌림");
 
@@ -506,6 +507,8 @@ const text = noteInput.value.trim();
 
 if(text==="") return;
 
+
+try{
 
 
 await addDoc(
@@ -531,11 +534,21 @@ text:text
 );
 
 
-
 noteInput.value="";
 
 
 alert("특이사항 저장 완료");
+
+
+}
+
+catch(error){
+
+
+alert(error.message);
+
+
+}
 
 
 };
