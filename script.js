@@ -492,7 +492,9 @@ const achievements = [
 
 title:"Frontier Pioneer",
 
-state:"Earned"
+state:"Earned",
+
+description:"활동중인 프론티어 맴버에게 부여되는 기본 업적"
 
 },
 
@@ -500,7 +502,9 @@ state:"Earned"
 
 title:"Joined Frontier",
 
-state:"Earned"
+state:"Earned",
+
+description:"프론티어에 오신 걸 환영합니다! 개척자님."
 
 },
 
@@ -508,7 +512,9 @@ state:"Earned"
 
 title:"The First Pioneer",
 
-state:"Earned"
+state:"Earned",
+
+description:"가장 처음 함께한 개척자에게 주는 칭호."
 
 },
 
@@ -516,7 +522,9 @@ state:"Earned"
 
 title:"Project Frontier 1",
 
-state:"Earned"
+state:"Earne",
+
+description:"2026년 3분기에 진행된 첫 합작에 참여했습니다!"
 
 },
 
@@ -779,6 +787,10 @@ card.innerHTML=`
 <h3>${item.title}</h3>
 
 <p>${item.state}</p>
+
+<p class="achievementDesc">
+${item.description}
+</p>
 
 `;
 
