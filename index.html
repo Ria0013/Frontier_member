@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Team Frontier Member System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- =========================
+LOADING
+========================= -->
+
+<div id="loading">
+
+<div class="loadingLogo">
+TEAM FRONTIER
+</div>
+
+<div id="loadingText">
+Connecting...
+</div>
+
+</div>
+
+<!-- =========================
+LOGIN
+========================= -->
+
+<section id="loginPage">
+
+<div class="loginBox">
+
+<h1>TEAM FRONTIER</h1>
+
+<p class="subTitle">
+MEMBER SYSTEM
+</p>
+
+<input
+type="password"
+id="password"
+placeholder="PASSWORD"
+maxlength="20"
+autocomplete="off">
+
+<button id="loginBtn">
+ACCESS
+</button>
+
+<div id="loginMessage"></div>
+
+</div>
+
+</section>
+
+<!-- =========================
+MAIN
+========================= -->
+
+<section id="mainPage">
+
+<header>
+
+<div>
+
+<h2>
+TEAM FRONTIER
+</h2>
+
+<p>
+Member System
+</p>
+
+</div>
+
+<div class="systemStatus">
+
+<div>SYSTEM</div>
+
+<span class="onlineLed"></span>
+
+ONLINE
+
+</div>
+
+</header>
+
+<!-- =========================
+DASHBOARD
+========================= -->
+
+<div class="dashboard">
+
+<div class="menuBox" id="memberBtn">
+
+<h3>
+Member Directory
+</h3>
+
+<p>
+Frontier Members
+</p>
+
+</div>
+
+<div class="menuBox" id="achievementBtn">
+
+<h3>
+Achievement Records
+</h3>
+
+<p>
+Achievements
+</p>
+
+</div>
+
+<div class="menuBox" id="managementBtn">
+
+<h3>
+Management
+</h3>
+
+<p>
+Staff Only
+</p>
+
+</div>
+
+</div>
+
+<!-- =========================
+SYSTEM
+========================= -->
+
+<div class="infoWrap">
+
+<div class="infoBox">
+
+<h3>
+SYSTEM NOTICE
+</h3>
+
+<ul>
+
+<li>Welcome to Team Frontier.</li>
+
+<li>Authorized Personnel Only.</li>
+
+<li>Last Update : 2026.07.16</li>
+
+</ul>
+
+</div>
+
+<div class="infoBox">
+
+<h3>
+멤버 현황
+</h3>
+
+<div class="counter">
+
+<div>
+
+🟢 ONLINE
+
+<span id="onlineCount">
+0
+</span>
+
+</div>
+
+<div>
+
+🟡 RESTING
+
+<span id="restingCount">
+0
+</span>
+
+</div>
+
+<div>
+
+🔴 OFFLINE
+
+<span id="offlineCount">
+0
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="infoBox">
+
+<h3>
+최근 업데이트
+</h3>
+
+<ul>
+
+<li>Member System Created</li>
+
+<li>Management Connected</li>
+
+<li>Achievement Ready</li>
+
+</ul>
+
+</div>
+
+<div class="infoBox">
+
+<h3>
+SYSTEM INFO
+</h3>
+
+<p>
+
+Version
+<br>
+
+v1.0.0
+
+</p>
+
+<p>
+
+Time(KST)
+
+<br>
+
+<span id="clock">
+00:00:00
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+<!-- =========================
+MEMBER DIRECTORY
+========================= -->
+
+<section id="memberSection">
+
+<h2>
+Member Directory
+</h2>
+
+<p class="sectionDesc">
+
+10 Frontier Members
+
+</p>
+
+<div class="memberGroup">
+
+<h3>
+관리진
+</h3>
+
+<div id="staffContainer" class="memberContainer">
+
+</div>
+
+<div class="memberGroup">
+
+<h3>
+
+1기 팀원
+
+</h3>
+
+<div id="generation1" class="memberContainer">
+
+</div>
+
+</div>
+
+<div class="memberGroup">
+
+<h3>
+
+2기 팀원
+
+</h3>
+
+<div id="generation2" class="memberContainer">
+
+</div>
+
+</div>
+
+<div class="memberGroup">
+
+<h3>
+
+4기 팀원 (Coming Soon)
+
+</h3>
+
+<div id="generation4" class="memberContainer">
+
+</div>
+
+</div>
+
+<div class="memberGroup">
+
+<h3>
+
+5기 팀원 (Coming Soon)
+
+</h3>
+
+<div id="generation5" class="memberContainer">
+
+</div>
+
+</div>
+
+<div class="memberGroup">
+
+<h3>
+
+6기 팀원 (Coming Soon)
+
+</h3>
+
+<div id="generation6" class="memberContainer">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ACHIEVEMENT
+========================= -->
+
+<section id="achievementSection">
+
+<h2>
+
+Achievement Records
+
+</h2>
+
+<p class="sectionDesc">
+
+Frontier Achievement Database
+
+</p>
+
+<div id="achievementContainer">
+
+</div>
+
+</section>
+
+<!-- =========================
+MANAGEMENT
+========================= -->
+
+<section id="managementPopup">
+
+<div class="popupBox">
+
+<h2>
+
+Management Access
+
+</h2>
+
+<p>
+
+Staff Password Required
+
+</p>
+
+<input
+
+type="password"
+
+id="adminPassword"
+
+placeholder="9999"
+
+autocomplete="off">
+
+<button id="adminBtn">
+
+ACCESS
+
+</button>
+
+<div id="adminMessage">
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div>
+
+Created by
+
+<strong>
+
+LR. 리아 & 오애
+
+</strong>
+
+</div>
+
+<div>
+
+Team Frontier Member System
+
+v1.0.0
+
+</div>
+
+<div>
+
+Authorized Personnel Only
+
+</div>
+
+</footer>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
