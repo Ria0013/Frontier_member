@@ -236,6 +236,35 @@ white-space:pre-line;
 }
 
 
+/* =========================
+DELETE BUTTON
+========================= */
+
+
+.deleteBtn{
+
+border:1px solid #ffffff;
+
+color:#f7d18c;
+
+background:#212121;
+
+margin-top:15px;
+
+padding:8px 15px;
+
+}
+
+
+.deleteBtn:hover{
+
+background:#f7d18c;
+
+color:#212121;
+
+}
+
+
 
 /* =========================
 STATUS
@@ -501,12 +530,17 @@ getFirestore,
 
 collection,
 
-addDoc
+addDoc,
+
+getDocs,
+
+deleteDoc,
+
+doc
 
 }
 
 from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-
 
 
 
@@ -821,24 +855,6 @@ alert("기록장 저장 완료");
 /* =========================
 FIRESTORE LOAD
 ========================= */
-
-
-import {
-
-getDocs,
-
-collection,
-
-deleteDoc,
-
-doc
-
-}
-
-from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-
-
-
 
 
 const noteList =
