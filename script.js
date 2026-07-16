@@ -208,11 +208,21 @@ role:"Leader",
 
 generation:"staff",
 
-joinDate:"-",
+joinDate:"0709",
 
 status:"ONLINE",
 
 message:"Team Frontier Leader"
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -226,11 +236,21 @@ role:"Sub Leader",
 
 generation:"staff",
 
-joinDate:"-",
+joinDate:"0709",
 
 status:"ONLINE",
 
 message:"Together We Move Forward."
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -244,11 +264,21 @@ role:"Manager",
 
 generation:"staff",
 
-joinDate:"-",
+joinDate:"0709",
 
-status:"RESTING",
+status:"OFFLINE",
 
 message:"Management Support."
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -262,11 +292,23 @@ role:"Member",
 
 generation:"1",
 
-joinDate:"-",
+joinDate:"0711",
 
 status:"ONLINE",
 
 message:""
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"The First Pioneer",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -280,11 +322,21 @@ role:"Member",
 
 generation:"1",
 
-joinDate:"-",
+joinDate:"0711",
 
 status:"ONLINE",
 
 message:""
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -298,11 +350,21 @@ role:"Member",
 
 generation:"1",
 
-joinDate:"-",
+joinDate:"0711",
 
-status:"OFFLINE",
+status:"ONLINE",
 
 message:""
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -316,11 +378,21 @@ role:"Member",
 
 generation:"1",
 
-joinDate:"-",
+joinDate:"0711",
 
 status:"ONLINE",
 
 message:""
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -336,9 +408,19 @@ generation:"2",
 
 joinDate:"-",
 
-status:"RESTING",
+status:"ONLINE",
 
 message:""
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 },
 
@@ -358,6 +440,16 @@ status:"ONLINE",
 
 message:""
 
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
+
 },
 
 {
@@ -372,9 +464,19 @@ generation:"2",
 
 joinDate:"-",
 
-status:"OFFLINE",
+status:"ONLINE",
 
 message:""
+
+achievement:[
+
+"Frontier Pioneer",
+
+"Joined Frontier",
+
+"Project Frontier 1"
+
+]
 
 }
 
@@ -396,7 +498,7 @@ state:"Earned"
 
 {
 
-title:"Story Writer",
+title:"Joined Frontier",
 
 state:"Earned"
 
@@ -404,17 +506,17 @@ state:"Earned"
 
 {
 
-title:"Coming Soon",
+title:"The First Pioneer",
 
-state:"Locked"
+state:"Earned"
 
 },
 
 {
 
-title:"Coming Soon",
+title:"Project Frontier 1",
 
-state:"Locked"
+state:"Earned"
 
 },
 
@@ -494,6 +596,29 @@ ${badge}
 <p><strong>Status</strong> : ${member.status}</p>
 
 <p><strong>Message</strong> : ${member.message}</p>
+
+<p><strong>Achievement</strong></p>
+
+<div class="memberAchievement">
+
+${
+member.achievement && member.achievement.length > 0
+
+?
+
+member.achievement.map(function(item){
+
+return "🏆 " + item;
+
+}).join("<br>")
+
+:
+
+"None"
+
+}
+
+</div>
 
 </div>
 
