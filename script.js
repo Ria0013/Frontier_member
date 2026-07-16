@@ -168,11 +168,9 @@ const generation1 = document.getElementById("generation1");
 
 const generation2 = document.getElementById("generation2");
 
+const generation3 = document.getElementById("generation3");
+
 const generation4 = document.getElementById("generation4");
-
-const generation5 = document.getElementById("generation5");
-
-const generation6 = document.getElementById("generation6");
 
 /* =========================
    ACHIEVEMENT CONTAINER
@@ -990,5 +988,3 @@ showMembers();
 updateClock();
 
 }
-
-window.addEventListener("load",initializeSystem);
