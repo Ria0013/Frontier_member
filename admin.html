@@ -6,133 +6,393 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Team Frontier Admin</title>
+<title>
+Team Frontier Admin
+</title>
 
-<link rel="stylesheet" href="style.css">
 
 <style>
 
-body{
 
-background:#111;
-color:white;
-font-family:sans-serif;
-padding:30px;
+/* =========================
+RESET
+========================= */
+
+
+*{
+
+box-sizing:border-box;
 
 }
+
+
+body{
+
+margin:0;
+
+padding:30px;
+
+background:#212121;
+
+color:white;
+
+font-family:"Arial", sans-serif;
+
+}
+
+
+
+/* =========================
+TITLE
+========================= */
 
 
 h1{
 
-color:#ffd400;
+color:#f7d18c;
+
+font-size:28px;
+
+letter-spacing:2px;
 
 }
 
 
-.adminCard{
+.subTitle{
 
-border:1px solid #ffd400;
+color:#ffffff;
+
+font-size:14px;
+
+margin-bottom:40px;
+
+}
+
+
+
+/* =========================
+BOX
+========================= */
+
+
+.adminBox{
+
+border:1px solid #ffffff;
+
+background:#212121;
+
 padding:20px;
-max-width:500px;
-margin-top:30px;
+
+margin-bottom:25px;
 
 }
 
 
-.section{
 
-margin-top:20px;
-padding:15px;
-background:#1b1b1b;
+/* =========================
+SECTION TITLE
+========================= */
+
+
+.sectionTitle{
+
+color:#f7d18c;
+
+border-bottom:1px solid #ffffff;
+
+padding-bottom:10px;
+
+margin-bottom:20px;
 
 }
 
 
-input{
 
-width:70%;
-padding:10px;
+/* =========================
+MEMBER LIST
+========================= */
 
-background:#222;
+
+.memberList{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+
+
+.memberButton{
+
+border:1px solid #ffffff;
+
+background:#212121;
+
 color:white;
 
-border:1px solid #555;
-
-}
-
-
-button{
-
-padding:10px;
-
-background:#ffd400;
-border:none;
+padding:12px 20px;
 
 cursor:pointer;
 
 }
 
 
-.record{
+.memberButton:hover{
+
+color:#f7d18c;
+
+}
+
+
+
+/* =========================
+INPUT
+========================= */
+
+
+textarea{
+
+width:100%;
+
+height:120px;
+
+resize:vertical;
+
+background:#212121;
+
+color:white;
+
+border:1px solid #ffffff;
+
+padding:12px;
+
+font-size:14px;
+
+}
+
+
+
+button{
+
+background:#212121;
+
+color:#f7d18c;
+
+border:1px solid #ffffff;
+
+padding:10px 20px;
 
 margin-top:10px;
-padding:8px;
 
-background:#333;
+cursor:pointer;
+
+}
+
+
+button:hover{
+
+background:#f7d18c;
+
+color:#212121;
 
 }
 
 
-.warning{
 
-color:#ff5555;
+/* =========================
+RECORD
+========================= */
+
+
+.record{
+
+border:1px solid #ffffff;
+
+padding:15px;
+
+margin-top:10px;
 
 }
+
+
+.recordDate{
+
+color:#f7d18c;
+
+font-size:13px;
+
+}
+
+
+.recordText{
+
+margin-top:8px;
+
+white-space:pre-line;
+
+}
+
+
+
+/* =========================
+STATUS
+========================= */
+
+
+#selectedMember{
+
+color:#f7d18c;
+
+font-size:20px;
+
+margin-bottom:20px;
+
+}
+
 
 
 </style>
 
+
 </head>
+
 
 
 <body>
 
 
+
 <h1>
-TEAM FRONTIER<br>
+
+TEAM FRONTIER
+
+<br>
+
 ADMIN CONTROL
+
 </h1>
 
 
-<div class="adminCard">
+<p class="subTitle">
 
+AUTHORIZED PERSONNEL ONLY
 
-<h2>
-눈꽃
-</h2>
+<br>
 
+관리진 전용 시스템
 
-<p>
-관리진
 </p>
 
 
 
-<div class="section">
+
+<!-- =========================
+MEMBER MANAGEMENT
+========================= -->
 
 
-<h3>
-특이사항
-</h3>
+<div class="adminBox">
 
 
-<input
-id="noteInput"
-placeholder="특이사항 입력">
+<h2 class="sectionTitle">
+
+MEMBER MANAGEMENT
+
+</h2>
 
 
-<button onclick="addNote()">
+<div class="memberList">
+
+
+<button class="memberButton">
+
+눈꽃
+
+</button>
+
+
+<button class="memberButton">
+
+후유
+
+</button>
+
+
+<button class="memberButton">
+
+오애
+
+</button>
+
+
+<button class="memberButton">
+
+슈팝
+
+</button>
+
+
+<button class="memberButton">
+
+금꽃
+
+</button>
+
+
+<button class="memberButton">
+
+셰인
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="selectedMember">
+
+멤버를 선택해주세요
+
+</div>
+
+
+
+
+
+<!-- =========================
+NOTE
+========================= -->
+
+
+<div class="adminBox">
+
+
+<h2 class="sectionTitle">
+
+📌 특이사항
+
+</h2>
+
+
+<textarea id="noteInput"
+placeholder="특이사항 기록 입력">
+
+</textarea>
+
+
+<button>
+
 추가
+
 </button>
 
 
@@ -146,21 +406,32 @@ placeholder="특이사항 입력">
 
 
 
-<div class="section">
+
+<!-- =========================
+WARNING
+========================= -->
 
 
-<h3>
-경고 기록
-</h3>
+<div class="adminBox">
 
 
-<input
-id="warningInput"
-placeholder="경고 내용 입력">
+<h2 class="sectionTitle">
+
+⚠ 경고 기록
+
+</h2>
 
 
-<button onclick="addWarning()">
+<textarea id="warningInput"
+placeholder="경고 기록 입력">
+
+</textarea>
+
+
+<button>
+
 추가
+
 </button>
 
 
@@ -172,14 +443,55 @@ placeholder="경고 내용 입력">
 </div>
 
 
+
+
+
+<!-- =========================
+HISTORY
+========================= -->
+
+
+<div class="adminBox">
+
+
+<h2 class="sectionTitle">
+
+🎉 TEAM FRONTIER HISTORY
+
+</h2>
+
+
+<textarea id="historyInput"
+placeholder="Team Frontier 기록 입력">
+
+</textarea>
+
+
+<button>
+
+추가
+
+</button>
+
+
+<div id="historyList">
+
 </div>
 
+
+</div>
 
 
 <script type="module">
 
 
-import { initializeApp } 
+/* =========================
+FIREBASE
+========================= */
+
+
+import { initializeApp }
+
 from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
 
 
@@ -189,13 +501,12 @@ getFirestore,
 
 collection,
 
-addDoc,
-
-getDocs
+addDoc
 
 }
 
 from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
 
 
 
@@ -226,38 +537,155 @@ const db = getFirestore(app);
 
 
 
-// =====================
-// 특이사항 추가
-// =====================
+
+/* =========================
+CURRENT MEMBER
+========================= */
 
 
-window.addNote = async function(){
+let currentMember = "";
 
 
-const input =
+
+
+const selectedMember =
+document.getElementById("selectedMember");
+
+
+
+
+/* =========================
+MEMBER SELECT
+========================= */
+
+
+const memberButtons =
+document.querySelectorAll(".memberButton");
+
+
+
+memberButtons.forEach(function(button){
+
+
+button.onclick=function(){
+
+
+currentMember = button.textContent.trim();
+
+
+selectedMember.textContent =
+
+"선택된 멤버 : " + currentMember;
+
+
+
+};
+
+
+});
+
+
+
+
+
+/* =========================
+DATE
+========================= */
+
+
+function getDate(){
+
+
+const now = new Date();
+
+
+return now.toLocaleDateString("ko-KR",{
+
+year:"numeric",
+
+month:"2-digit",
+
+day:"2-digit"
+
+});
+
+
+}
+
+
+
+
+
+/* =========================
+NOTE SAVE
+========================= */
+
+
+const noteInput =
 document.getElementById("noteInput");
 
 
-if(input.value==="") return;
+
+const noteButton =
+noteInput.nextElementSibling;
+
+
+
+noteButton.onclick = async function(){
+
+
+
+if(currentMember===""){
+
+
+alert("멤버를 선택해주세요.");
+
+return;
+
+
+}
+
+
+
+if(noteInput.value.trim()==="") return;
+
+
 
 
 await addDoc(
 
-collection(db,"members/snowflake/notes"),
+collection(
+
+db,
+
+"members",
+
+currentMember,
+
+"notes"
+
+),
 
 {
 
-text:input.value
+
+date:getDate(),
+
+text:noteInput.value.trim()
+
 
 }
+
 
 );
 
 
-input.value="";
+
+noteInput.value="";
 
 
-loadNotes();
+
+alert("특이사항 저장 완료");
 
 
 };
@@ -265,38 +693,70 @@ loadNotes();
 
 
 
-// =====================
-// 경고 추가
-// =====================
 
 
-window.addWarning = async function(){
+/* =========================
+WARNING SAVE
+========================= */
 
 
-const input =
+const warningInput =
 document.getElementById("warningInput");
 
+const warningButton =
+warningInput.nextElementSibling;
 
-if(input.value==="") return;
+
+warningButton.onclick = async function(){
+
+
+if(currentMember===""){
+
+
+alert("멤버를 선택해주세요.");
+
+return;
+
+
+}
+
+
+
+if(warningInput.value.trim()==="") return;
+
+
 
 
 await addDoc(
 
-collection(db,"members/snowflake/warnings"),
+collection(
+
+db,
+
+"members",
+
+currentMember,
+
+"warnings"
+
+),
 
 {
 
-text:input.value
+date:getDate(),
+
+text:warningInput.value.trim()
 
 }
 
 );
 
 
-input.value="";
+
+warningInput.value="";
 
 
-loadWarnings();
+alert("경고 기록 저장 완료");
 
 
 };
@@ -304,89 +764,184 @@ loadWarnings();
 
 
 
-// =====================
-// 불러오기
-// =====================
+
+/* =========================
+HISTORY SAVE
+========================= */
 
 
-async function loadNotes(){
+const historyInput =
+document.getElementById("historyInput");
 
 
-const list =
+
+const historyButton =
+historyInput.nextElementSibling;
+
+
+
+historyButton.onclick = async function(){
+
+
+if(historyInput.value.trim()==="") return;
+
+
+
+await addDoc(
+
+collection(
+
+db,
+
+"history"
+
+),
+
+{
+
+date:getDate(),
+
+text:historyInput.value.trim()
+
+}
+
+);
+
+
+
+historyInput.value="";
+
+
+alert("기록장 저장 완료");
+
+
+};
+
+
+/* =========================
+FIRESTORE LOAD
+========================= */
+
+
+import {
+
+getDocs,
+
+collection,
+
+deleteDoc,
+
+doc
+
+}
+
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+
+
+
+const noteList =
 document.getElementById("noteList");
 
 
-list.innerHTML="";
-
-
-const data =
-await getDocs(
-
-collection(db,"members/snowflake/notes")
-
-);
-
-
-
-data.forEach((doc)=>{
-
-
-const div =
-document.createElement("div");
-
-
-div.className="record";
-
-
-div.textContent =
-doc.data().text;
-
-
-list.appendChild(div);
-
-
-});
-
-
-}
-
-
-
-
-async function loadWarnings(){
-
-
-const list =
+const warningList =
 document.getElementById("warningList");
 
 
-list.innerHTML="";
+const historyList =
+document.getElementById("historyList");
 
 
-const data =
-await getDocs(
 
-collection(db,"members/snowflake/warnings")
+
+
+/* =========================
+LOAD MEMBER RECORD
+========================= */
+
+
+async function loadMemberRecords(){
+
+
+if(currentMember==="") return;
+
+
+
+noteList.innerHTML="";
+
+warningList.innerHTML="";
+
+
+
+
+const notes = await getDocs(
+
+collection(
+
+db,
+
+"members",
+
+currentMember,
+
+"notes"
+
+)
 
 );
 
 
 
-data.forEach((doc)=>{
+notes.forEach(function(item){
 
 
-const div =
-document.createElement("div");
+createRecord(
+
+noteList,
+
+item,
+
+"note"
+
+);
 
 
-div.className="record warning";
+});
 
 
-div.textContent =
-"⚠ "+doc.data().text;
 
 
-list.appendChild(div);
+const warnings = await getDocs(
+
+collection(
+
+db,
+
+"members",
+
+currentMember,
+
+"warnings"
+
+)
+
+);
+
+
+
+warnings.forEach(function(item){
+
+
+createRecord(
+
+warningList,
+
+item,
+
+"warning"
+
+);
 
 
 });
@@ -396,15 +951,189 @@ list.appendChild(div);
 
 
 
-loadNotes();
 
-loadWarnings();
 
+/* =========================
+LOAD HISTORY
+========================= */
+
+
+async function loadHistory(){
+
+
+historyList.innerHTML="";
+
+
+
+const history = await getDocs(
+
+collection(
+
+db,
+
+"history"
+
+)
+
+);
+
+
+
+history.forEach(function(item){
+
+
+createRecord(
+
+historyList,
+
+item,
+
+"history"
+
+);
+
+
+});
+
+
+}
+
+
+
+
+
+
+/* =========================
+CREATE RECORD
+========================= */
+
+
+function createRecord(list,item,type){
+
+
+const data=item.data();
+
+
+
+const box=document.createElement("div");
+
+
+box.className="record";
+
+
+
+box.innerHTML=`
+
+<div class="recordDate">
+
+${data.date}
+
+</div>
+
+
+<div class="recordText">
+
+${data.text}
+
+</div>
+
+
+<button class="deleteBtn">
+
+삭제
+
+</button>
+
+`;
+
+
+
+
+box.querySelector(".deleteBtn").onclick=
+
+async function(){
+
+
+const check =
+confirm("정말 삭제하시겠습니까?");
+
+
+if(!check) return;
+
+
+
+await deleteDoc(
+
+item.ref
+
+);
+
+
+
+box.remove();
+
+
+};
+
+
+
+
+list.appendChild(box);
+
+
+}
+
+
+
+
+
+/* =========================
+MEMBER CLICK UPDATE
+========================= */
+
+
+memberButtons.forEach(function(button){
+
+
+button.addEventListener(
+
+"click",
+
+function(){
+
+
+setTimeout(function(){
+
+
+loadMemberRecords();
+
+
+},100);
+
+
+
+}
+
+);
+
+
+});
+
+
+
+
+
+/* =========================
+START
+========================= */
+
+
+loadHistory();
 
 
 </script>
 
-
 </body>
+
 
 </html>
