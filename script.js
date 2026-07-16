@@ -920,8 +920,7 @@ adminMessage.textContent="ACCESS GRANTED";
 
 setTimeout(function(){
 
-window.location.href=
-"https://ria0013.github.io/TeamFrontier/";
+window.location.href="admin.html";
 
 },400);
 
