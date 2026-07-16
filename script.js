@@ -202,7 +202,7 @@ const members = [
 
 name:"눈꽃",
 
-id:"snowflake",
+id:"snowflower",
 
 role:"Leader",
 
@@ -212,7 +212,7 @@ joinDate:"0709",
 
 status:"ONLINE",
 
-message:"Team Frontier Leader",
+message:"한겨울에 빙수가 되는 게 꿈인 눈꽃입니다❄️",
 
 achievement:[
 
