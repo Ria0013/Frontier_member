@@ -258,7 +258,7 @@ achievement:[
 
 name:"오애",
 
-id:"oae",
+id:"5love",
 
 role:"Manager",
 
@@ -268,15 +268,13 @@ joinDate:"0709",
 
 status:"OFFLINE",
 
-message:"Management Support.",
+message:"다섯 가지 사랑, 五愛",
 
 achievement:[
 
 "Frontier Pioneer",
 
 "Joined Frontier",
-
-"Project Frontier 1"
 
 ]
 
@@ -286,7 +284,7 @@ achievement:[
 
 name:"슈팝",
 
-id:"supop",
+id:"Shupop",
 
 role:"Member",
 
@@ -296,7 +294,7 @@ joinDate:"0711",
 
 status:"ONLINE",
 
-message:"",
+message:"설탕먼지 슈팝입니다~",
 
 achievement:[
 
